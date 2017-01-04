@@ -1,6 +1,6 @@
 # JS_Plugins | JS插件库
 
-A repository for common plugins what developed in all web projects.
+A repository for common plugins what developed in web projects.
 
 一个 js 代码库，存放一些在项目开发过程中写出一些公共的小插件。
 
