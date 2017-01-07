@@ -1,0 +1,13 @@
+/.svn/
+/.git/
+/.hg/
+/CVS/
+/.vscode/
+/.idea/
+/.sass-cache/
+/node_modules/
+/bower_components/
+*.sublime-workspace
+*.sublime-project
+*.log
+.DS_Store

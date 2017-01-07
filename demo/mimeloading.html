@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS_Plugins</title>
+  <link rel="stylesheet" type="text/css" href="../dist/mimeplugin.min.css" />
+</head>
+<body>
+  <button id="showloading">showloading</button>
+</body>
+<script type="application/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="application/javascript" src="../dist/mimeplugin.min.js"></script>
+<script>
+  $("#showloading").click(function (e) {
+    mimeLoading.show();
+    setTimeout(function() {
+      mimeLoading.hide();
+    }, 5000);
+  });
+</script>
+</html>

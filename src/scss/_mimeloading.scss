@@ -1,0 +1,452 @@
+@mixin center($offset) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: $offset;
+  margin-top: $offset;
+}
+
+@mixin outPath {
+  width: 12.4em;
+  height: 12.4em;
+  display: block;
+  content: " ";
+  border: 1em solid;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@keyframes badge-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes badge-fadeOut {
+  from {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(0,0,1);
+  }
+}
+
+@keyframes badge-cycle-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cycle-show {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes book-scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale3d(0, 0, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes s1-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-13deg);
+  }
+}
+
+@keyframes s2-rotate {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(13deg);
+  }
+}
+
+@keyframes s3-rotate {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(77deg);
+  }
+}
+
+@keyframes s4-rotate {
+  from {
+    transform: rotate(135deg);
+  }
+  to {
+    transform: rotate(103deg);
+  }
+}
+
+@keyframes s8-cycle-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes s4-rotating {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(270deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes s4-ending {
+  from {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.mimeloading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 2.666667vw;
+   * {
+    box-sizing: border-box;
+  }
+}
+.mimeloading .mml-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0;
+}
+.mimeloading .mml-wrap {
+  width: 15em;
+  height: 15em;
+  @include center(-7.5em);
+  transform: scaleX(.3333) scaleY(.3333);
+}
+.mimeloading .mml-cycle-wrap {
+  width: 14.4em;
+  height: 14.4em;
+  @include center(-7.2em);
+  transform: scaleX(.3333) scaleY(.3333);
+}
+
+.mimeloading .mml-badge {
+  width: 9.6em;
+  height: 9.6em;
+  border-radius: 100%;
+  @include center(-4.8em);
+}
+.mimeloading .mml-badge-cycle {
+  width: 11.6em;
+  height: 11.6em;
+  border: 1em solid;
+  background: transparent;
+  border-radius: 100%;
+  @include center(-5.8em);
+}
+
+.mimeloading .mml-book {
+  width: 4.2em;
+  height: 3.4em;
+  border-radius: 0 .6em .6em .6em;
+  @include center(-2.1em);
+  margin-top: -1.3em;
+  z-index: 9;
+
+  &:before {
+    width: 1.4em;
+    height: 1em;
+    content: "";
+    display: block;
+    border-radius: .5em 0 0 .5em;
+    position: absolute;
+    right: 0;
+    bottom: 1.2em;
+  }
+  &:after {
+    width: .4em;
+    height: .4em;
+    content: "";
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    right: .5em;
+    bottom: 1.5em;
+  }
+  span {
+    width: 3.8em;
+    height: .8em;
+    display: block;
+    border-radius: .5em .5em 0 0;
+    position: absolute;
+    left: 0;
+    top: -.8em;
+    &:before {
+      width: 3em;
+      height: .4em;
+      content: "";
+      display: block;
+      border-radius: .2em .2em 0 .2em;
+      position: absolute;
+      right: .2em;
+      bottom: 0;
+    }
+    &:after {
+      width: .2em;
+      height: .1em;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.mimeloading .mml-cycle {
+  width: 14.4em;
+  height: 14.4em;
+  background: transparent;
+  border: 1em solid;
+  border-radius: 100%;
+  @include center(-7.2em);
+}
+
+.mimeloading .mml-cycle-s8 {
+  width: 14.4em;
+  height: 14.4em;
+  background: transparent;
+  border-radius: 100%;
+  @include center(-7.2em);
+
+  span {
+    display: block;
+    width: 14.4em;
+    height: 14.4em;
+    background: transparent;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:before {
+      @include outPath;
+      clip-path: polygon(5.6em 0, 9em 0, 7.2em 7.2em);
+    }
+    &:after {
+      @include outPath;
+      clip-path: polygon(7.2em 7.2em, 9em 14.4em, 5.6em 14.4em);
+    }
+  }
+  span {
+    transform: rotate(0deg);
+  }
+  span+span {
+    transform: rotate(45deg);
+  }
+  span+span+span {
+    transform: rotate(90deg);
+  }
+  span+span+span+span {
+    transform: rotate(135deg);
+  }
+}
+
+.mimeloading .mml-cycle-s4 {
+  width: 14.4em;
+  height: 14.4em;
+  background: transparent;
+  border-radius: 100%;
+  @include center(-7.2em);
+  opacity: 0;
+  animation: s4-rotating 1.5s infinite linear;
+    animation-delay: 1.3s;
+  span {
+    display: block;
+    width: 14.4em;
+    height: 14.4em;
+    background: transparent;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:before {
+      @include outPath;
+      clip-path: polygon(4.2em 0, 10em 0, 7.2em 7.2em);
+    }
+    &:after {
+      @include outPath;
+      clip-path: polygon(7.2em 7.2em, 10em 14.4em, 4.2em 14.4em);
+    }
+  }
+  span+span {
+    transform: rotate(90deg);
+  }
+}
+
+.mimeloading.starting {
+  .mml-badge {
+    animation: badge-fadeIn .25s ease-out;
+  }
+  .mml-badge-cycle {
+    opacity: 0;
+    animation: badge-cycle-show .125s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .25s;
+  }
+  .mml-book {
+    animation: book-scaleIn .25s ease-out;
+  }
+  .mml-cycle {
+    opacity: 0;
+    animation: cycle-show .5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .375s;
+  }
+  .mml-cycle-s8 {
+    opacity: 0;
+    animation: s8-cycle-show 1s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .7s;
+    span {
+      animation: s1-rotate .25s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+    span+span {
+      animation: s2-rotate .25s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+    span+span+span {
+      animation: s3-rotate .25s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+    span+span+span+span {
+      animation: s4-rotate .25s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+  }
+  .mml-cycle-s4 {
+    opacity: 0;
+    animation: s4-rotating 1.5s infinite linear;
+    animation-delay: 1.3s;
+  }
+}
+
+.mimeloading.ending {
+  .mml-badge {
+    animation: badge-fadeOut .5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+  }
+  .mml-book {
+    animation: badge-fadeOut .5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+  }
+  .mml-badge-cycle {
+    animation: hide .5s linear;
+    animation-fill-mode: forwards;
+  }
+  .mml-cycle-s8 {
+    opacity: 0;
+  }
+  .mml-cycle {
+    opacity: 0;
+  }
+  // .mml-cycle-s4 {
+  //   animation: s4-ending .5s linear;
+  //   animation-fill-mode: forwards;
+  //   animation-delay: 3s;
+  // }
+  .mml-cycle-s4 span:first-child:before {
+    animation: hide .125s linear;
+    animation-fill-mode: forwards;
+    animation-delay: .125s;
+  }
+  .mml-cycle-s4 span:first-child:after {
+    animation: hide .125s linear;
+    animation-fill-mode: forwards;
+    animation-delay: .125s;
+  }
+  .mml-cycle-s4 span:last-child:before {
+    animation: hide .125s linear;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+  }
+  .mml-cycle-s4 span:last-child:after {
+    animation: hide .125s linear;
+    animation-fill-mode: forwards;
+    animation-delay: .25s;
+  }
+}

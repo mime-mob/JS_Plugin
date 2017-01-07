@@ -1,0 +1,36 @@
+{
+  "name": "js_plugins",
+  "version": "1.0.0",
+  "description": "A repository for javascript or jquery plugins in web projects",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "set NODE_ENV=prod&& gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mime-mob/JS_Plugins.git"
+  },
+  "keywords": [
+    "jsplugin"
+  ],
+  "author": "Rookie_Zoe",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mime-mob/JS_Plugins/issues"
+  },
+  "homepage": "https://github.com/mime-mob/JS_Plugins#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
