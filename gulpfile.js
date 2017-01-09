@@ -25,7 +25,7 @@ gulp.task("css", function () {
 });
 
 gulp.task("js", function () {
-  return gulp.src(["./src/js/*.js"])
+  return gulp.src(["./src/js/*.js", "!./src/js/jquery.*.js"])
     .pipe(concat("mimeplugin.js"))
     .pipe(gulp.dest("./dist/"))
     .pipe(rename({ "suffix": ".min" }))
@@ -33,4 +33,13 @@ gulp.task("js", function () {
     .pipe(gulp.dest("./dist/"));
 });
 
-gulp.task("default", ["css", "js"]);
+gulp.task("js-jquery", function () {
+  return gulp.src(["./src/js/jquery.*.js"])
+    .pipe(concat("jquery.mimeplugin.js"))
+    .pipe(gulp.dest("./dist/"))
+    .pipe(rename({ "suffix": ".min" }))
+    .pipe(uglify())
+    .pipe(gulp.dest("./dist/"));
+});
+
+gulp.task("default", ["css", "js", "js-jquery"]);
