@@ -20,3 +20,4 @@ All Plugins should be written in original javascript, even though it already be 
 ## 3. List | 插件列表
 
   1. mimeLoading
+  2. jquery.mimeLoading
